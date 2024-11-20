@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин китайских товаров</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stiles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <h1>Магазин китайских товаров</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Меню</a></li>
+            <li><a href="#">Корзина</a></li>
+                        <li><a href="#">Рейтинг</a></li>
+            <li><a href="#">Вход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="store-list">
+    {% for store in stores %}
+        <div class="store">
+            <h2><a href="{% url 'store_detail' store.id %}">{{ store.name }}</a></h2>
+            <img src="{{ store.logo.url }}" alt="{{ store.name }}">
+            <p>{{ store.description }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<footer>
+    <p>&copy; 2023 Магазин китайских товаров</p>
+</footer>
+</body>
+</html>
+

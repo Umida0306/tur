@@ -1,0 +1,73 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffeb3b; /* Яркий фон */
+    color: #3f51b5; /* Яркий цвет текста */
+}
+
+header {
+    background-color: #ff4081; /* Яркий розовый цвет */
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    text-transform: uppercase;
+    animation: bounce 1s infinite; /* Анимация заголовка */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav ul li:hover {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.store-list, .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрирование элементов */
+}
+
+.store, .product {
+    border: 2px dashed #3f51b5; /* Дашированные границы */
+    margin: 15px;
+    padding: 15px;
+    width: calc(25% - 60px);
+    transition: transform 0.3s; /* Плавная анимация при наведении */
+}
+
+.store:hover, .product:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+}
+
+.product img, .store img {
+    max-width: 100%;
+    border-radius: 10px; /* Закруглённые углы изображений */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff4081; /* Так же яркий цвет для футера */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

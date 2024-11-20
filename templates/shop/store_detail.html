@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ store.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <h1>{{ store.name }}</h1>
+</header>
+
+<div class="store-detail">
+    <h2>Топ продажи</h2>
+    <div class="product-list">
+        {% for product in top_products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>{{ product.description }}</p>
+                <p>Цена: {{ product.price }} сом</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>Акции</h2>
+    <div class="product-list">
+        {% for product in sale_products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>{{ product.description }}</p>
+                <p>Цена: {{ product.price }} сом</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>Сезонные товары</h2>
+    <div class="product-list">
+        {% for product in seasonal_products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>{{ product.description }}</p>
+                <p>Цена: {{ product.price }} сом</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<a href="{% url 'home' %}">Назад к магазинам</a>
+
+<footer>
+    <p>&copy; Магазин китайских товаров</p>
+</footer>
+</body>
+</html>
